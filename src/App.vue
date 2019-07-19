@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <mt-header fixed title="VUE-WEBPACK"></mt-header>
-    <transition >
+    <transition>
        <router-view></router-view>
     </transition>
     <nav class="mui-bar mui-bar-tab">
@@ -33,6 +33,7 @@
 <style lang="scss" scoped>
   .app-container {
     padding-top: 40px;
+    padding-bottom: 50px;
     overflow-x: hidden;
   }
   .v-enter{
