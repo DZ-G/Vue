@@ -1,6 +1,6 @@
 <template>
   <div class="goods-list">
-    <div class="goods-item" v-for="item in goodList" :key="item.id">
+    <router-link class="goods-item" v-for="item in goodList" :key="item.id" :to="'/home/goodsInfo/'+item.id" tag="div">
       <img :src="item.img_url" />
       <h1>{{item.title}}</h1>
       <div class="goodinfo">
@@ -13,7 +13,7 @@
           <span>还剩{{item.stock_quantity}}件</span>
         </p>
       </div>
-    </div>
+    </router-link>
     <mt-button type="danger" size ="large" @click="getMore">加载更多</mt-button>
   </div>
 </template>
