@@ -56,7 +56,7 @@ export default {
       lunbotuList: [],
       goodsInfo: {},
       ballFlag: false,
-      selectNum:1
+      selectNum: 1
     };
   },
   created() {
@@ -90,6 +90,14 @@ export default {
     },
     addShopCar() {
       this.ballFlag = !this.ballFlag;
+      var goodsInfo = {
+        id: this.id,
+        number: this.selectNum,
+        price: this.goodsInfo.sell_price,
+        select: "true"
+      };
+      
+      this.$store.commit("addtoCar",goodsInfo);
     },
     beforeEnter(el) {
       el.style.transform = "translate(0,0)";
@@ -107,9 +115,8 @@ export default {
     afterEnter(el) {
       this.ballFlag = !this.ballFlag;
     },
-    getCount(count){
+    getCount(count) {
       this.selectNum = count;
-    
     }
   },
   components: {
